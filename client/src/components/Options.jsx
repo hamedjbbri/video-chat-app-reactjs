@@ -54,7 +54,7 @@ const Options = ({ children }) => {
                             <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} fullWidth/> 
 
                             <CopyToClipboard text={me} className={classes.margin}>
-                                <Button variant="contained" color="primary" fullWidth startIcon={<Assignment fontsize="large" />}>
+                                <Button variant="contained" color="primary" fullWidth startIcon={<Assignment fontSize="large" />}>
                                    Copy Your ID
                                </Button>
                             </CopyToClipboard>
@@ -67,7 +67,7 @@ const Options = ({ children }) => {
                                 <Button
                                    variant="contained" 
                                    color="secondary" 
-                                   startIcon= {<PhoneDisabled fontsize="large" />}
+                                   startIcon= {<PhoneDisabled fontSize="large" />}
                                    fullWidth
                                    onClick={leaveCall}
                                    className={classes.margin}
@@ -78,7 +78,7 @@ const Options = ({ children }) => {
                                 <Button 
                                    variant="contained" 
                                    color="primary" 
-                                   startIcon={<Phone fontsize="large" />}
+                                   startIcon={<Phone fontSize="large" />}
                                    fullWidth
                                    onClick={() => callUser(idToCall)}
                                    className={classes.margin}
