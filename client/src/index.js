@@ -5,6 +5,7 @@ import App from './App';
 import { ContextProvider } from './SocketContext';
 import './styles.css';
 
+
 ReactDOM.render(
         <ContextProvider>
            <App />
@@ -12,3 +13,4 @@ ReactDOM.render(
         document.getElementById('root')
         );
 
+ 
