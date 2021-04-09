@@ -8,7 +8,7 @@ const SocketContext = createContext();
 const socket = io('http://localhost:5000');
 
 const ContextProvider = ({ children }) => {
-    const [stream, setStream] = useState(null)
+    const [stream, setStream] = useState(null);
     const [me, setMe] = useState('')
     const [call, setCall] = useState({})
     const [callAccepted, setCallAccepted] = useState(false);
@@ -20,16 +20,17 @@ const ContextProvider = ({ children }) => {
     const connectionRef = useRef();
 
 
-
+    //   useEfect equal to componentDidMount
     useEffect(() => {
-        console.log(myVideo.current)
+         
         navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             .then((currentStream) => {
                 setStream(currentStream);
 
                 myVideo.current.srcObject = currentStream;
-            });
-
+            }).catch(function(err) {
+                console.log(err);
+            })
         socket.on('me', (id) => setMe(id));
 
         socket.on('calluser', ({ from, name: callerName, signal }) => (
